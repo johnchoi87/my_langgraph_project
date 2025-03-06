@@ -4,6 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["최준우 <emotree@wavve.com>"]
 readme = "README.md"
+packages = [{include = "my_langgraph_project"}]
 
 [tool.poetry.scripts]
 start = "streamlit run main.py"
