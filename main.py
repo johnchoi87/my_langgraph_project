@@ -1,6 +1,6 @@
 import streamlit as st
 from streamlit_js_eval import get_geolocation
-from utils.graph import create_workflow
+from my_langgraph_project.utils.graph import create_workflow
 from langchain_core.messages import ChatMessage
 
 st.set_page_config(page_title="나만의 알프레드", page_icon="🧑‍⚖️")
