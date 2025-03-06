@@ -50,6 +50,7 @@ lxml = "^5.2.2"
 pillow = "^10.3.0"
 
 google-api-python-client = "^2.162.0"
+streamlit-js-eval = "^0.1.7"
 
 
 [build-system]
