@@ -4,7 +4,7 @@ from my_langgraph_project.utils.graph import create_workflow
 from langchain_core.messages import ChatMessage
 
 st.set_page_config(page_title="나만의 알프레드", page_icon="🧑‍⚖️")
-st.title('🧑안녕하세요 알프레드입니다! ')
+st.title('나만의 알프레드 🧑‍⚖️')
 location_data = get_geolocation()
 print(location_data)
 
