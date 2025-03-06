@@ -6,9 +6,7 @@ from langgraph.constants import START, END
 from langgraph.graph import StateGraph, MessagesState
 from langchain_community.utilities import OpenWeatherMapAPIWrapper
 
-from utils.state import ServiceState
 from dotenv import load_dotenv
-from langchain_core.messages import AIMessage
 from langchain_core.tools import tool
 
 from langgraph.prebuilt import ToolNode
