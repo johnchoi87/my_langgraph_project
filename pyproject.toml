@@ -5,6 +5,9 @@ description = ""
 authors = ["최준우 <emotree@wavve.com>"]
 readme = "README.md"
 
+[tool.poetry.scripts]
+start = "streamlit run main.py"
+
 [tool.poetry.dependencies]
 python = ">=3.11,<3.12"
 

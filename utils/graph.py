@@ -1,3 +1,5 @@
+import os
+
 from langchain_google_community import GooglePlacesTool
 from langchain_openai import ChatOpenAI
 from langgraph.constants import START, END
@@ -13,10 +15,10 @@ from langgraph.prebuilt import ToolNode
 import streamlit as st
 import googlemaps
 
-# Google Maps API 키 설정
-key = "AIzaSyB0eR19fETo1_qodLhComhcBlte-y7ny6o"
-gmaps = googlemaps.Client(key=key)
 load_dotenv()
+# Google Maps API 키 설정
+key = os.getenv("GMAPS_API_KEY")
+gmaps = googlemaps.Client(key=key)
 
 
 # LangChain Tool 정의
@@ -87,9 +89,9 @@ def call_model(state: MessagesState):
     messages.append({
         "role": "system",
         "content": "당신은 친절하고 유쾌한 AI입니다! 🤖💡답변에 이모지를 적극 활용하고, 명확하고 간결한 방식으로 설명해주세요! 한글로 대답해주세요!🚀🔥"
-        "사용자가 특정 도시의 날씨를 요청하면, 해당 도시 이름을 영어로 변환하여 get_weather 도구를 호출하세요. "
-        "예: '서울 날씨를 알려줘' -> get_weather(location='seoul')"
-        "입력 프롬프트에 도시에 대한 정보가 없으면 get_city_from_coordinates 도구를 사용하여 도시 이름을 찾아주세요. "
+                   "사용자가 특정 도시의 날씨를 요청하면, 해당 도시 이름을 영어로 변환하여 get_weather 도구를 호출하세요. "
+                   "예: '서울 날씨를 알려줘' -> get_weather(location='seoul')"
+                   "입력 프롬프트에 도시에 대한 정보가 없으면 get_city_from_coordinates 도구를 사용하여 도시 이름을 찾아주세요. "
     })
     with st.spinner("AI가 답변을 준비하고 있습니다."):
         response = model_with_tools.invoke(messages)
